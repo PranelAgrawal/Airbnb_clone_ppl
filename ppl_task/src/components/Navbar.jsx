@@ -65,7 +65,7 @@ export default function Navbar({ listing, addToast }) {
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
-      const yOffset = -90;
+      const yOffset = -70;
       const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -159,42 +159,42 @@ export default function Navbar({ listing, addToast }) {
           scrolls back into natural view at scrollY === 0. */}
       {isPastSubtitle && (
         <header className="fixed top-0 left-0 right-0 z-30 bg-white border-b border-gray-200 shadow-sm">
-          <div className="max-w-[1440px] mx-auto px-12 xl:px-16 h-[80px] flex items-center justify-between relative">
+          <div className="max-w-[1440px] mx-auto px-12 xl:px-16 h-[60px] flex items-center justify-between relative">
 
             {/* Left: Navigation Tabs */}
             <nav className="flex items-center gap-6 md:gap-8 h-full">
               <button
                 onClick={scrollToTop}
-                className={`h-full flex items-center text-sm md:text-[15px] cursor-pointer transition-colors focus:outline-none ${activeTab === 'photos'
-                  ? 'font-semibold text-primary border-b-2 border-black'
-                  : 'font-medium text-secondary hover:text-black border-b-2 border-transparent hover:border-gray-300'
+                className={`h-full flex items-center text-sm md:text-[15px] font-semibold text-primary cursor-pointer transition-colors focus:outline-none ${activeTab === 'photos'
+                  ? 'border-b-2 border-black'
+                  : 'border-b-2 border-transparent'
                   }`}
               >
                 Photos
               </button>
               <button
                 onClick={() => scrollToSection('amenities-section')}
-                className={`h-full flex items-center text-sm md:text-[15px] cursor-pointer transition-colors focus:outline-none ${activeTab === 'amenities'
-                  ? 'font-semibold text-primary border-b-2 border-black'
-                  : 'font-medium text-secondary hover:text-black border-b-2 border-transparent hover:border-gray-300'
+                className={`h-full flex items-center text-sm md:text-[15px] font-semibold text-primary cursor-pointer transition-colors focus:outline-none ${activeTab === 'amenities'
+                  ? 'border-b-2 border-black'
+                  : 'border-b-2 border-transparent'
                   }`}
               >
                 Amenities
               </button>
               <button
                 onClick={() => scrollToSection('reviews')}
-                className={`h-full flex items-center text-sm md:text-[15px] cursor-pointer transition-colors focus:outline-none ${activeTab === 'reviews'
-                  ? 'font-semibold text-primary border-b-2 border-black'
-                  : 'font-medium text-secondary hover:text-black border-b-2 border-transparent hover:border-gray-300'
+                className={`h-full flex items-center text-sm md:text-[15px] font-semibold text-primary cursor-pointer transition-colors focus:outline-none ${activeTab === 'reviews'
+                  ? 'border-b-2 border-black'
+                  : 'border-b-2 border-transparent'
                   }`}
               >
                 Reviews
               </button>
               <button
                 onClick={() => scrollToSection('location')}
-                className={`h-full flex items-center text-sm md:text-[15px] cursor-pointer transition-colors focus:outline-none ${activeTab === 'location'
-                  ? 'font-semibold text-primary border-b-2 border-black'
-                  : 'font-medium text-secondary hover:text-black border-b-2 border-transparent hover:border-gray-300'
+                className={`h-full flex items-center text-sm md:text-[15px] font-semibold text-primary cursor-pointer transition-colors focus:outline-none ${activeTab === 'location'
+                  ? 'border-b-2 border-black'
+                  : 'border-b-2 border-transparent'
                   }`}
               >
                 Location

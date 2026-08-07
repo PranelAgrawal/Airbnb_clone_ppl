@@ -331,3 +331,14 @@ This file stores all user prompts for this workspace.
 
 
 
+
+---
+
+## Prompt 39
+- **Date/Time:** 2026-08-07 10:52:00 IST
+- **Content:**
+  > right now, u can see that my header is pretty big in comparison to the reference, so make it a bit small and make it that the buttons look the same, like dark, and only difference ist hat there is a line when clicked on it.
+
+
+
+
