@@ -89,7 +89,7 @@ export default function Navbar({ listing, addToast }) {
           {/* Left: Official Airbnb Logo Image */}
           <a href="#" className="flex items-center gap-2 cursor-pointer focus:outline-none z-10" aria-label="Airbnb Homepage">
             <img
-              src="./public/Airbnb-Logo.svg"
+              src="/Airbnb-Logo.svg"
               alt="Airbnb"
               className="h-20 w-auto"
             />
