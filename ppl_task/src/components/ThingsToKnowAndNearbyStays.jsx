@@ -179,11 +179,10 @@ export default function ThingsToKnowAndNearbyStays({ addToast }) {
               onClick={() => scrollToPage(1)}
               disabled={currentPage === 1}
               aria-label="Previous page"
-              className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors focus:outline-none ${
-                currentPage === 1
+              className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors focus:outline-none ${currentPage === 1
                   ? 'text-gray-300 border-gray-200 cursor-not-allowed'
                   : 'text-[#222222] border-gray-300 hover:bg-gray-100 cursor-pointer'
-              }`}
+                }`}
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -192,11 +191,10 @@ export default function ThingsToKnowAndNearbyStays({ addToast }) {
               onClick={() => scrollToPage(2)}
               disabled={currentPage === 2}
               aria-label="Next page"
-              className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors focus:outline-none ${
-                currentPage === 2
+              className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors focus:outline-none ${currentPage === 2
                   ? 'text-gray-300 border-gray-200 cursor-not-allowed'
                   : 'text-[#222222] border-gray-300 hover:bg-gray-100 cursor-pointer'
-              }`}
+                }`}
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -219,7 +217,7 @@ export default function ThingsToKnowAndNearbyStays({ addToast }) {
                 <img
                   src={stay.image}
                   alt={stay.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
