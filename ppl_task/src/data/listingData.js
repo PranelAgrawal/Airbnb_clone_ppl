@@ -15,7 +15,7 @@ export const listingData = {
   originalPricePerNight: 6332,
   currency: "₹",
   discountBadge: "Get 10% off your next stay. Terms apply",
-  
+
   host: {
     name: "Mirashya Homes",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
@@ -198,8 +198,8 @@ export const listingData = {
     { name: "Hot tub", icon: "Bath", featured: true },
     { name: "Pets allowed", icon: "Dog", featured: true },
     { name: "Exterior security cameras on property", icon: "Camera", featured: true },
-    { name: "Carbon monoxide alarm", icon: "Shield", featured: true },
-    { name: "Smoke alarm", icon: "BellRing", featured: true }
+    { name: "Carbon monoxide alarm", icon: "Shield", featured: true, disabled: true },
+    { name: "Smoke alarm", icon: "BellRing", featured: true, disabled: true }
   ],
 
   reviews: [

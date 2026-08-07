@@ -178,9 +178,25 @@ export default function AmenitiesModal({ isOpen, onClose }) {
                   {group.items.map((item, itemIdx) => {
                     const IconComp = item.icon || Info;
                     return (
-                      <div key={itemIdx} className="py-4 flex items-center gap-5 text-base font-normal text-primary">
-                        <IconComp className="w-6 h-6 text-primary flex-shrink-0 stroke-[1.5]" />
-                        <span>{item.name}</span>
+                      <div
+                        key={itemIdx}
+                        className={`py-4 flex items-center gap-5 text-base font-normal ${item.disabled ? 'text-gray-400' : 'text-primary'
+                          }`}
+                      >
+                        <div className="relative inline-flex items-center justify-center w-6 h-6 flex-shrink-0">
+                          <IconComp
+                            className={`w-6 h-6 stroke-[1.5] ${item.disabled ? 'text-gray-400' : 'text-primary'
+                              }`}
+                          />
+                          {item.disabled && (
+                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                              <div className="w-7 h-[1.5px] bg-gray-400 rotate-45" />
+                            </div>
+                          )}
+                        </div>
+                        <span className={item.disabled ? 'line-through' : ''}>
+                          {item.name}
+                        </span>
                       </div>
                     );
                   })}

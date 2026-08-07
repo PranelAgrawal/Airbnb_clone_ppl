@@ -5,9 +5,20 @@ import * as Icons from 'lucide-react';
 export default function ListingDetails({ listing, onShowAllAmenities, addToast }) {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
-  const renderIcon = (iconName) => {
+  const renderIcon = (iconName, disabled = false) => {
     const IconComponent = Icons[iconName] || Icons.HelpCircle;
-    return <IconComponent className="w-6 h-6 text-primary" />;
+    return (
+      <div className="relative inline-flex items-center justify-center w-6 h-6">
+        <IconComponent
+          className={`w-6 h-6 ${disabled ? 'text-gray-400' : 'text-primary'}`}
+        />
+        {disabled && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-7 h-[1.5px] bg-gray-400 rotate-45" />
+          </div>
+        )}
+      </div>
+    );
   };
 
   const handleClearDates = () => {
@@ -16,7 +27,7 @@ export default function ListingDetails({ listing, onShowAllAmenities, addToast }
 
   return (
     <div className="space-y-8 text-primary font-sans">
-      
+
       {/* Property Header & Guests Specs */}
       <div id="property-sub-title" className="pb-6 border-b border-gray-200">
         <h2 className="text-2xl md:text-[26px] font-semibold tracking-tight text-primary">
@@ -29,15 +40,15 @@ export default function ListingDetails({ listing, onShowAllAmenities, addToast }
 
       {/* 1. Guest Favorite Banner matching screenshot */}
       <div className="border border-gray-300 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 my-6">
-        
+
         {/* Left Badge & Subtext */}
         <div className="flex items-center gap-4">
           {/* Laurel Wreath Badge */}
           <div className="flex items-center gap-1 text-primary">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 16C7 11.0294 11.0294 7 16 7C20.9706 7 25 11.0294 25 16C25 20.9706 20.9706 25 16 25" stroke="#222222" strokeWidth="2" strokeLinecap="round"/>
-              <path d="M12 11C10 13 9 15 9 17.5" stroke="#222222" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M20 11C22 13 23 15 23 17.5" stroke="#222222" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M7 16C7 11.0294 11.0294 7 16 7C20.9706 7 25 11.0294 25 16C25 20.9706 20.9706 25 16 25" stroke="#222222" strokeWidth="2" strokeLinecap="round" />
+              <path d="M12 11C10 13 9 15 9 17.5" stroke="#222222" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M20 11C22 13 23 15 23 17.5" stroke="#222222" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
             <div className="flex flex-col">
               <span className="font-bold text-base leading-tight">Guest</span>
@@ -122,7 +133,7 @@ export default function ListingDetails({ listing, onShowAllAmenities, addToast }
       <div className="pb-8 border-b border-gray-200 space-y-4">
         <div className="bg-[#F7F7F7] rounded-2xl p-4 sm:p-5 text-sm text-primary">
           Some info has been automatically translated.{' '}
-          <button 
+          <button
             onClick={() => {
               if (addToast) addToast("Showing original language text", "info");
             }}
@@ -134,7 +145,7 @@ export default function ListingDetails({ listing, onShowAllAmenities, addToast }
         <p className={`text-base text-primary leading-relaxed ${showFullDescription ? '' : 'line-clamp-3'}`}>
           🌴 Plan Your Relaxing Holiday at Amor De Goa by Mirashya Homes! ✨ Stay in this cozy 1BHK in the heart of Candolim, featuring a private jacuzzi 🛁 for the perfect unwind. Enjoy high-speed WiFi 💻, Smart TV 📺, pet-friendly comfort 🐾, and stylish interiors. Just minutes from Candolim Beach 🏖️, popular cafés, restaurants, and nightlife 🍹, it’s ideal for couples seeking romance, relaxation, and a touch of luxury in North Goa. ❤️🌴
         </p>
-        <button 
+        <button
           onClick={() => {
             setShowFullDescription(!showFullDescription);
             if (addToast) addToast(showFullDescription ? "Showing less description" : "Showing full description", "info");
@@ -151,14 +162,14 @@ export default function ListingDetails({ listing, onShowAllAmenities, addToast }
         <h3 className="text-2xl font-bold text-primary tracking-tight">
           Where you'll sleep
         </h3>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Bedroom Card */}
           <div className="space-y-2">
             <div className="relative overflow-hidden rounded-xl bg-gray-100 aspect-[16/11]">
-              <img 
-                src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80" 
-                alt="Bedroom double bed" 
+              <img
+                src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80"
+                alt="Bedroom double bed"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -171,9 +182,9 @@ export default function ListingDetails({ listing, onShowAllAmenities, addToast }
           {/* Living room Card */}
           <div className="space-y-2">
             <div className="relative overflow-hidden rounded-xl bg-gray-100 aspect-[16/11]">
-              <img 
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
-                alt="Living room sofa" 
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                alt="Living room sofa"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -192,13 +203,18 @@ export default function ListingDetails({ listing, onShowAllAmenities, addToast }
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {listing.amenities.slice(0, 10).map((amenity, idx) => (
-            <div key={idx} className="flex items-center gap-4 text-primary">
-              {renderIcon(amenity.icon)}
-              <span className="text-base">{amenity.name}</span>
+            <div
+              key={idx}
+              className={`flex items-center gap-4 ${amenity.disabled ? 'text-gray-400' : 'text-primary'}`}
+            >
+              {renderIcon(amenity.icon, amenity.disabled)}
+              <span className={`text-base ${amenity.disabled ? 'line-through' : ''}`}>
+                {amenity.name}
+              </span>
             </div>
           ))}
         </div>
-        <button 
+        <button
           onClick={onShowAllAmenities}
           className="mt-4 border border-primary text-primary hover:bg-lightbg font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none"
         >
@@ -219,13 +235,13 @@ export default function ListingDetails({ listing, onShowAllAmenities, addToast }
 
         {/* Dual Month Calendar Grid */}
         <div className="pt-2 space-y-6">
-          
+
           {/* Month Headers */}
           <div className="flex items-center justify-between">
             <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
               <ChevronLeft className="w-5 h-5 text-primary" />
             </button>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 flex-1 max-w-2xl px-4">
               <div className="text-center md:text-left font-bold text-base text-primary pl-4">
                 October 2026
@@ -242,7 +258,7 @@ export default function ListingDetails({ listing, onShowAllAmenities, addToast }
 
           {/* Months Grids Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl mx-auto">
-            
+
             {/* October 2026 */}
             <div className="space-y-4">
               <div className="grid grid-cols-7 text-center text-xs font-semibold text-secondary">
@@ -348,7 +364,7 @@ export default function ListingDetails({ listing, onShowAllAmenities, addToast }
             <Keyboard className="w-5 h-5" />
           </button>
 
-          <button 
+          <button
             onClick={handleClearDates}
             className="font-semibold text-sm underline text-primary hover:text-black focus:outline-none"
           >
