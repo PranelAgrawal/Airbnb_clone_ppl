@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { 
-  Sparkles, CheckCircle2, Key, MessageSquare, Map, Tag, Star, ChevronRight 
+import {
+  Sparkles, CheckCircle2, Key, MessageSquare, Map, Tag, Star, ChevronRight
 } from 'lucide-react';
 
 export default function ReviewsSection({ listing, addToast }) {
@@ -100,23 +100,17 @@ export default function ReviewsSection({ listing, addToast }) {
 
   return (
     <section id="reviews" className="w-full border-t border-gray-200 pt-16 pb-12 mt-12 text-primary font-sans">
-      
+
       {/* 1. Laurel Wreath Giant Rating Header */}
       <div className="text-center space-y-2 pb-10">
         <div className="flex items-center justify-center gap-1 sm:gap-2">
-          
-          {/* Left Laurel Wreath Leaf Branch */}
-          <svg width="72" height="110" viewBox="0 0 72 110" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-14 h-24 sm:w-16 sm:h-28 md:w-20 md:h-32 scale-x-[-1]">
-            <path d="M52 12C42 34 26 64 20 86C16 98 20 102 30 100C36 98 38 90 32 86" stroke="#222222" strokeWidth="2.8" strokeLinecap="round" fill="none" />
-            <path d="M50 14C40 6 28 10 32 22C36 26 48 22 50 14Z" fill="#222222" />
-            <path d="M52 16C62 10 70 20 60 28 C52 30 48 22 52 16Z" fill="#333333" />
-            <path d="M42 34 C30 24 18 32 24 44 C30 48 40 40 42 34Z" fill="#222222" />
-            <path d="M44 36 C56 28 64 38 52 48 C44 50 40 42 44 36Z" fill="#333333" />
-            <path d="M30 58 C16 48 6 58 14 70 C22 74 32 64 30 58Z" fill="#222222" />
-            <path d="M32 60 C46 52 52 64 40 74 C32 74 28 66 32 60Z" fill="#333333" />
-            <path d="M22 80 C8 72 0 82 8 92 C16 98 26 88 22 80Z" fill="#222222" />
-            <path d="M24 82 C38 76 42 88 30 96 C22 96 18 88 24 82Z" fill="#333333" />
-          </svg>
+
+          {/* Left Laurel Wreath Image */}
+          <img
+            src="/left_image.jpeg"
+            alt="Guest favourite laurel left"
+            className="w-14 h-24 sm:w-16 sm:h-28 md:w-20 md:h-32 object-contain"
+          />
 
           {/* Rating Number */}
           <span className="text-7xl sm:text-8xl md:text-[105px] font-bold tracking-tighter text-[#222222] font-sans leading-none px-2 select-none">
@@ -124,24 +118,18 @@ export default function ReviewsSection({ listing, addToast }) {
           </span>
 
           {/* Right Laurel Wreath Leaf Branch */}
-          <svg width="72" height="110" viewBox="0 0 72 110" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-14 h-24 sm:w-16 sm:h-28 md:w-20 md:h-32">
-            <path d="M52 12C42 34 26 64 20 86C16 98 20 102 30 100C36 98 38 90 32 86" stroke="#222222" strokeWidth="2.8" strokeLinecap="round" fill="none" />
-            <path d="M50 14C40 6 28 10 32 22C36 26 48 22 50 14Z" fill="#222222" />
-            <path d="M52 16C62 10 70 20 60 28 C52 30 48 22 52 16Z" fill="#333333" />
-            <path d="M42 34 C30 24 18 32 24 44 C30 48 40 40 42 34Z" fill="#222222" />
-            <path d="M44 36 C56 28 64 38 52 48 C44 50 40 42 44 36Z" fill="#333333" />
-            <path d="M30 58 C16 48 6 58 14 70 C22 74 32 64 30 58Z" fill="#222222" />
-            <path d="M32 60 C46 52 52 64 40 74 C32 74 28 66 32 60Z" fill="#333333" />
-            <path d="M22 80 C8 72 0 82 8 92 C16 98 26 88 22 80Z" fill="#222222" />
-            <path d="M24 82 C38 76 42 88 30 96 C22 96 18 88 24 82Z" fill="#333333" />
-          </svg>
+          <img
+            src="/right_image.jpeg"
+            alt="Guest favourite laurel right"
+            className="w-14 h-24 sm:w-16 sm:h-28 md:w-20 md:h-32 object-contain"
+          />
 
         </div>
 
         <h3 className="text-2xl sm:text-3xl font-semibold text-[#222222] tracking-tight pt-1">
           Guest favourite
         </h3>
-        
+
         <p className="text-sm sm:text-base text-[#222222] max-w-sm sm:max-w-md mx-auto leading-relaxed pt-1">
           This home is a guest favourite based on ratings, reviews and reliability
         </p>
@@ -153,7 +141,7 @@ export default function ReviewsSection({ listing, addToast }) {
 
       {/* 2. Sub-Ratings Grid WITH thin vertical divider lines */}
       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-6 pt-10 pb-8 text-sm border-t border-gray-200 w-full">
-        
+
         {/* Overall rating column */}
         <div className="space-y-2 pr-4 md:border-r border-gray-200">
           <div className="font-semibold text-sm text-[#222222]">Overall rating</div>
@@ -162,8 +150,8 @@ export default function ReviewsSection({ listing, addToast }) {
               <div key={n} className="flex items-center gap-2">
                 <span className="w-2">{n}</span>
                 <div className="w-28 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-[#222222] rounded-full" 
+                  <div
+                    className="h-full bg-[#222222] rounded-full"
                     style={{ width: n === 5 ? '96%' : n === 4 ? '4%' : '0%' }}
                   />
                 </div>
@@ -235,7 +223,7 @@ export default function ReviewsSection({ listing, addToast }) {
       {/* 3. Filter Pills — emoji inside colored circle badges */}
       <div className="flex items-center gap-3 overflow-x-auto pb-6 pt-4 scrollbar-none w-full border-b border-gray-100">
         {reviewFilterPills.map((pill, idx) => (
-          <button 
+          <button
             key={idx}
             onClick={() => handlePillClick(pill.label)}
             className="flex-shrink-0 pl-2 pr-4 py-2 bg-white hover:bg-lightbg border border-gray-300 rounded-full text-sm font-semibold text-primary flex items-center gap-2.5 transition-all shadow-sm focus:outline-none"
@@ -255,13 +243,13 @@ export default function ReviewsSection({ listing, addToast }) {
           const isExpanded = expandedReviews[rev.id];
           return (
             <div key={rev.id} className="space-y-3 text-[#222222] font-sans">
-              
+
               {/* User Avatar & Info Row */}
               <div className="flex items-center gap-3">
                 {rev.avatarType === 'image' ? (
-                  <img 
-                    src={rev.avatarUrl} 
-                    alt={rev.name} 
+                  <img
+                    src={rev.avatarUrl}
+                    alt={rev.name}
                     className="w-12 h-12 rounded-full object-cover shadow-sm flex-shrink-0"
                   />
                 ) : (
@@ -297,7 +285,7 @@ export default function ReviewsSection({ listing, addToast }) {
                 </p>
 
                 {rev.expandable && (
-                  <button 
+                  <button
                     onClick={() => toggleExpand(rev.id)}
                     className="mt-1.5 font-semibold underline text-base text-[#222222] hover:text-black focus:outline-none block"
                   >
@@ -313,7 +301,7 @@ export default function ReviewsSection({ listing, addToast }) {
 
       {/* 5. "Show all 19 reviews" Action Button */}
       <div className="pt-8">
-        <button 
+        <button
           onClick={handleShowAllReviews}
           className="border border-primary text-primary hover:bg-lightbg font-semibold py-3 px-6 rounded-xl transition-colors focus:outline-none text-base"
         >
