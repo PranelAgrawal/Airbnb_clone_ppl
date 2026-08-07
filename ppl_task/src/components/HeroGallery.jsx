@@ -8,9 +8,9 @@ export default function HeroGallery({ heroPhotos, onOpenPhotoTour }) {
     <div className="relative my-4 rounded-xl overflow-hidden shadow-sm">
       {/* 5-Photo Desktop Grid matching reference layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 h-[380px] md:h-[440px] lg:h-[480px]">
-        
+
         {/* Left Primary Large Photo (spans left half) */}
-        <div 
+        <div
           tabIndex={0}
           role="button"
           aria-label="Main listing terrace photo, click to open photo tour gallery"
@@ -23,12 +23,12 @@ export default function HeroGallery({ heroPhotos, onOpenPhotoTour }) {
             }
           }}
         >
-          <img 
-            src={heroPhotos[0]?.url} 
-            alt={heroPhotos[0]?.caption || "Terrace seating lounge"} 
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 brightness-95 group-hover:brightness-100"
+          <img
+            src={heroPhotos[0]?.url}
+            alt={heroPhotos[0]?.caption || "Terrace seating lounge"}
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-200" />
         </div>
 
         {/* Right 2x2 Grid of Sub Photos */}
@@ -40,7 +40,7 @@ export default function HeroGallery({ heroPhotos, onOpenPhotoTour }) {
             if (idx === 3) roundedClass = "rounded-br-xl";
 
             return (
-              <div 
+              <div
                 key={photo.id || idx}
                 tabIndex={0}
                 role="button"
@@ -54,12 +54,12 @@ export default function HeroGallery({ heroPhotos, onOpenPhotoTour }) {
                   }
                 }}
               >
-                <img 
-                  src={photo.url} 
-                  alt={photo.caption || `Sub photo ${idx + 2}`} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 brightness-95 group-hover:brightness-100"
+                <img
+                  src={photo.url}
+                  alt={photo.caption || `Sub photo ${idx + 2}`}
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-200" />
               </div>
             );
           })}
@@ -68,7 +68,7 @@ export default function HeroGallery({ heroPhotos, onOpenPhotoTour }) {
       </div>
 
       {/* Floating "Show all photos" Overlay Button matching reference screenshot */}
-      <button 
+      <button
         onClick={() => onOpenPhotoTour(null)}
         className="absolute bottom-5 right-5 bg-white text-primary hover:bg-lightbg text-xs font-semibold py-1.5 px-3 rounded-md border border-black/80 shadow-md flex items-center gap-2 transition-all active:scale-95 z-10 focus:ring-2 focus:ring-black focus:outline-none"
         aria-label="Show all photos"
